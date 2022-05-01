@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    char arr;
+    scanf("%c", &arr);
+    printf("%c", arr);
+    char s[100];
+    scanf("\n%s\n", &s);
+    printf("\n%s\n", s);
+    char sen[1000];
+    scanf("%[^\n]%*c", &sen);
+    printf("%s" ,sen);
+    
+    return 0;
+}
