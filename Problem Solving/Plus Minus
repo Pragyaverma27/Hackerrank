@@ -1,0 +1,22 @@
+//Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with  places after the decimal.
+
+Note: This challenge introduces precision problems. The test cases are scaled to six decimal places, though answers with absolute error of up to  are acceptable.
+
+
+
+
+void plusMinus(vector<int> arr) {
+  int n=arr.size();
+  float cnt1=0,cnt2=0,cnt3=0;
+  for(int i=0;i<n;i++){
+    if(arr[i]>0)
+      cnt1++;
+    else if(arr[i]<0)
+      cnt2++;
+    else if(arr[i]==0)
+      cnt3++;
+  }
+  cout<<setprecision(6)<<cnt1/n<<endl;
+  cout<<setprecision(6)<<cnt2/n<<endl;
+  cout<<showpoint<<setprecision(6)<<cnt3/n<<endl;
+}
