@@ -1,0 +1,27 @@
+int boardCutting(vector<int> cost_y, vector<int> cost_x) {
+  long int c1=1,c2=1;
+    long int sum=1;
+    sort(cost_y.begin(), cost_y.end(),greater<int>());
+    sort(cost_x.begin(), cost_x.end(),greater<int>());
+    while(!cost_x.empty() && !cost_y.empty()){
+        if(cost_x.front()>=cost_y.front()){
+            sum = sum+cost_x.front()*c1;
+            c2+=1;
+            cost_x.erase(cost_x.begin());
+        }
+        else{
+            sum = sum+cost_y.front()*c2;
+            c1+=1;
+            cost_y.erase((cost_y.begin()));
+        }
+    }
+    while(!cost_x.empty()){
+        sum = sum+cost_x.front()*c1;
+        cost_x.erase(cost_x.begin());
+    }
+    while(!cost_y.empty()){
+        sum = sum+cost_y.front()*c2;
+        cost_y.erase((cost_y.begin()));
+    }
+    return sum%1000000007-1;
+}
