@@ -1,0 +1,20 @@
+//Given a time in -hour AM/PM format, convert it to military (24-hour) time.
+
+Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+//
+
+
+
+
+def timeConversion(s):
+    # Write your code here
+    hrs = s[0:2]
+    mns = s[3:5]
+    sec = s[6:8]
+    A = s[8:]
+    if A == "AM" and hrs == "12":
+        hrs = "00"
+    elif A == "PM" and int(hrs) < 12:
+        hrs = str(int(hrs)+12)
+    return "{}:{}:{}".format(hrs,mns,sec)
