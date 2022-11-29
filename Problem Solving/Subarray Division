@@ -1,0 +1,15 @@
+int birthday(vector<int> s, int d, int m) {
+  int nWays = 0;
+    if(s.size() == 1){
+        if(s[0] == d){
+            return 1;
+        }
+    }
+    for(int i = 0; i < s.size(); i++){
+        if(accumulate(s.begin()+i, s.begin()+i + m, 0) == d){
+            nWays++;
+        }
+    }
+    return nWays;
+
+}
