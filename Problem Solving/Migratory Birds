@@ -1,0 +1,30 @@
+int migratoryBirds(vector<int> arr) {
+   map<int, int> map;
+    for(int i : arr){
+        map[i]++;
+    }
+    int largest = 0;
+    int bird;
+    for(auto i : map){
+        if(i.second > largest){
+            largest = i.second;
+            bird = i.first;
+        }
+    }
+    int temp = 0;
+    for(auto i : map){
+        if(i.second == largest){
+            temp++;
+        }
+    }
+    if(temp > 1){
+        for(auto i : map){
+            if(i.second == largest){
+                if(i.first < bird){
+                    bird = i.first;
+                }
+            }
+        }
+    } 
+    return bird;
+}
