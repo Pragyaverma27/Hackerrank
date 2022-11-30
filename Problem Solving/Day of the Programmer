@@ -1,0 +1,38 @@
+string dayOfProgrammer(int year) {
+  int leap=0;
+  string dm,y;
+  if(year < 1918){
+    if(year % 4 == 0)
+    {
+        leap = 1;
+    }
+    else{
+        leap = 0;
+    }
+}
+else if(leap == 1918){
+    leap = 2;
+}
+else if (year % 400 == 0)
+{
+    leap = 1;
+}
+else if(year % 4 == 0 && year % 100 != 0){
+    leap = 1;
+}
+
+if(year == 1918)
+{
+    dm = "26.09.";
+    y = to_string(year);
+}
+else if(leap == 0){
+    dm = "13.09.";
+    y = to_string(year);
+}
+else{
+    dm = "12.09.";
+    y = to_string(year);
+}
+return dm+y;
+}
